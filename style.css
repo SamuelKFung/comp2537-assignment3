@@ -7,15 +7,20 @@
 
 #pokemon_title {
   font-family: 'Pokemon', sans-serif;
-  font-size: 3rem; /* adjust size as needed */
-  color: #FFCB05; /* Pokémon yellow */
+  font-size: 2.5rem; 
+  color: #FFCB05; 
   text-align: center;
   margin: 20px 0;
+  text-shadow: 
+  -2px -2px 0 #000,  
+  2px -2px 0 #000,  
+  -2px 2px 0 #000,  
+  2px 2px 0 #000;  
 }
 
 body {
   margin: 0px;
-  background-color: #1b2e59; /* deep navy blue */
+  background-color: #1b2e59; 
   padding-bottom: 50px;
 }
 
@@ -29,7 +34,7 @@ body {
 }
 
 .difficulty.selected {
-  background-color: #FFDE00; /* Pikachu yellow */
+  background-color: #FFDE00; 
   color: #3B4CCA;
 }
 
@@ -37,7 +42,7 @@ button {
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  border: 2px solid #3B4CCA; /* Pokémon blue */
+  border: 2px solid #3B4CCA; 
   background-color: #3B4CCA;
   color: white;
   border-radius: 5px;
@@ -45,14 +50,20 @@ button {
 }
 
 button:hover {
-  background-color: #2a379f; /* darker blue for hover */
-  color: #ffcc00; /* optional: yellow accent like Pikachu */
+  background-color: #2a379f; 
+  color: #ffcc00; 
 }
 
 #game_stats {
   font-family: 'Pokemon', sans-serif;
+  font-size: 1.2rem;
   color: white;
   text-align: center; 
+  text-shadow: 
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,  
+  -1px 1px 0 #000,  
+  1px 1px 0 #000; 
 }
 
 #game_grid {
@@ -62,16 +73,14 @@ button:hover {
   display: grid;
 }
 
-
 .card {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   position: relative;
   transition: transform 1s;
   perspective: 1000px;
   transform-style: preserve-3d;
 }
-
 
 img {
   width: 100%;
@@ -99,11 +108,9 @@ img {
   backface-visibility: hidden;
 }
 
-
 .flip {
   transform: rotateY(180deg);
 }
-
 
 .front_face {
   transform: rotateY(180deg);

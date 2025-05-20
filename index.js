@@ -17,8 +17,6 @@ function setup() {
   $("#game_stats").hide();
   $("#game_grid").hide();
   $("#theme_buttons").hide();
-  $("#reset_button").show();
-  $("#start_button").show();
 
   // Set the default difficulty button
   $(".difficulty").removeClass("selected");
@@ -88,9 +86,9 @@ function setup() {
       const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1500");
       const data = await response.json();
       pokemonList = data.results; 
-      console.log(`Loaded ${pokemonList.length} Pokémon`);
+      console.log(`Loaded ${pokemonList.length} Pokemon`);
     } catch (e) {
-      alert("Failed to load Pokémon list from API.");
+      alert("Failed to load Pokemon list from API.");
       console.error(e);
     }
   }
@@ -106,6 +104,11 @@ function setup() {
 
       if (!img) {
         img = data.sprites?.versions?.["generation-i"]?.["red-blue"]?.front_default;
+      }
+
+      if (!img) {
+      const id = data.id;
+      img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
       }
 
       return img;
@@ -185,7 +188,7 @@ function setup() {
     shuffleArray(cardsData);
 
     // Add the cards to the grid
-    cardsData.forEach((card, index) => {
+    cardsData.forEach(card => {
       const cardHTML = `
         <div class="card" data-name="${card.name}">
           <div class="front_face">
@@ -301,7 +304,6 @@ function setup() {
     difficulty = this.id;
 
     setDifficultyTime(difficulty);
-    await generatePokemonCards(difficulty);
     resetGameUI();
   });
 
