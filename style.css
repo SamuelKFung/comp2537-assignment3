@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'Pokemon';
+  src: url('font/PokemonSolidNormal-xyWR.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#pokemon_title {
+  font-family: 'Pokemon', sans-serif;
+  font-size: 3rem; /* adjust size as needed */
+  color: #FFCB05; /* Pokémon yellow */
+  text-align: center;
+  margin: 20px 0;
+}
+
+body {
+  margin: 0px;
+  background-color: #1b2e59; /* deep navy blue */
+  padding-bottom: 50px;
+}
+
+#difficulty_buttons,
+#control_buttons {
+  margin: 20px auto;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.difficulty.selected {
+  background-color: #FFDE00; /* Pikachu yellow */
+  color: #3B4CCA;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid #3B4CCA; /* Pokémon blue */
+  background-color: #3B4CCA;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #2a379f; /* darker blue for hover */
+  color: #ffcc00; /* optional: yellow accent like Pikachu */
+}
+
+#game_stats {
+  font-family: 'Pokemon', sans-serif;
+  color: white;
+  text-align: center; 
+}
+
+#game_grid {
+  border: 2px tomato solid;
+  width: max-content;
+  margin: auto;
+  display: grid;
+}
+
+
+.card {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  transition: transform 1s;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+#game_grid.light {
+  background-color: white;
+}
+
+#game_grid.dark {
+  background-color: black;
+}
+
+#theme_buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.front_face,
+.back_face {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+
+.front_face {
+  transform: rotateY(180deg);
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- import jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <h1 id="pokemon_title">Pokémon Memory Game</h1>
+  <div id="difficulty_buttons">
+    <button id="easy" class="difficulty">Easy</button>
+    <button id="medium" class="difficulty">Medium</button>
+    <button id="hard" class="difficulty">Hard</button>
+  </div>
+
+  <div id="control_buttons">
+    <button id="start_button">Start</button>
+    <button id="reset_button">Reset</button>
+  </div>
+
+  <div id="game_stats">
+    <p>Number of Clicks: <span id="clicks">0</span></p>
+    <p>Number of Matches: <span id="matched">0</span></p>
+    <p>Number of Pairs Left: <span id="left">0</span></p>
+    <p>Total Number of Pairs: <span id="total">0</span></p>
+    <p>
+      You got <span id="total_time">200</span> seconds.
+      <span id="time_passed">0</span> <span id="second_label">seconds</span> passed!
+    </p>
+  </div>
+
+  <div id="game_grid">
+  </div>
+
+  <div id="theme_buttons">
+  <button id="light_theme">Light</button>
+  <button id="dark_theme">Dark</button>
+  </div>
+
+</body>
+
+</html>
