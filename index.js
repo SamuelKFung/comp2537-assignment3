@@ -27,10 +27,16 @@ function setup() {
   // Theme switchers
   $(document).on("click", "#light_theme", function () {
     $("#game_grid").removeClass("dark").addClass("light");
+
+    $("#light_theme").addClass("selected");
+    $("#dark_theme").removeClass("selected");
   });
 
   $(document).on("click", "#dark_theme", function () {
     $("#game_grid").removeClass("light").addClass("dark");
+
+    $("#dark_theme").addClass("selected");
+    $("#light_theme").removeClass("selected");
   });
 
   // Grab the Pokemon list once at the start
@@ -230,15 +236,15 @@ function setup() {
       if (timePassed >= totalTime) {
         clearInterval(timerId);
         clearTimeout(powerUpTimeoutId);
+        gameActive = false;
         alert("Time's up. You lost!");
-        resetGameUI();
       }
     }, 1000);
   }
 
   function bindCardClick() {
     $(".card").off("click").on("click", function () {
-      if (lock || $(this).hasClass("flip")) return;
+      if (!gameActive || lock || $(this).hasClass("flip")) return;
 
       clicks++;
       updateStats();

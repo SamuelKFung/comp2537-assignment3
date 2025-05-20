@@ -33,7 +33,7 @@ body {
   gap: 10px;
 }
 
-.difficulty.selected {
+.difficulty.selected, .theme.selected {
   background-color: #FFDE00; 
   color: #3B4CCA;
 }
